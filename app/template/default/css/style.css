@@ -52,6 +52,7 @@ body {
 /* Main marketing message and sign up button */
 
 .jumbotron {
+    background:#fff;
     text-align: center;
     border-bottom: .05rem solid #e5e5e5;
 }
@@ -100,4 +101,77 @@ body {
     margin-top: .25rem;
     font-size: .875rem;
     color: #dc3545;
+}
+
+.table td.text {
+    max-width: 177px;
+}
+
+.table td.text span:not(.flag-icon) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: -8px;
+}
+
+.signal-bars {
+    display: inline-block;
+}
+
+.signal-bars .bar {
+    width: 10%;
+    margin-left: 1%;
+    min-height: 20%;
+    display: inline-block;
+}
+
+.signal-bars .bar.first-bar {
+    height: 20%;
+}
+
+.signal-bars .bar.second-bar {
+    height: 40%;
+}
+
+.signal-bars .bar.third-bar {
+    height: 60%;
+}
+
+.signal-bars .bar.fourth-bar {
+    height: 80%;
+}
+
+.signal-bars .bar.fifth-bar {
+    height: 99%;
+}
+
+.good .bar {
+    background-color: #16a085;
+    border: thin solid #12816b;
+}
+
+.bad .bar {
+    background-color: #e74c3c;
+    border: thin solid #a82315;
+}
+
+.ok .bar {
+    background-color: #f1c40f;
+    border: thin solid #d0a90c;
+}
+
+.four-bars .bar.fifth-bar,
+.three-bars .bar.fifth-bar,
+.three-bars .bar.fourth-bar,
+.one-bar .bar:not(.first-bar),
+.two-bars .bar:not(.first-bar):not(.second-bar) {
+    background-color: #fafafa;
+    border: thin solid #f3f3f3;
+}
+
+.sizing-box {
+    height: 40px;
+    width: 85px
 }

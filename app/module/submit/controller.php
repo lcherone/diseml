@@ -63,10 +63,11 @@ class Controller extends \Framework\Controller
 				}
 			}
 			
-			if (!empty($form['domains']) && count($form['domains']) > 1) {
-				//$form['domains'] = array_slice($form['domains'], 0, 2000);
-				//$form['errors']['global'] = 'You may only submit upto 2000 domains at once.';
+			if (!empty($form['domains']) && count($form['domains']) > 3000) {
 				shuffle($form['domains']);
+				$form['domains'] = array_unique($form['domains']);
+				$form['domains'] = array_slice($form['domains'], 0, 3000);
+				$_SESSION['errors']['global'] = 'You may only submit upto 3000 domains at once.';
 			}
 
 			// set into session for processing

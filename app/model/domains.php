@@ -45,7 +45,7 @@ class Domains extends \Framework\Model
             if (strpos($url['scheme'].'://'.$url['host'], '.') === false) {
                 return false;
             }
-            
+
             if (!filter_var($url['scheme'].'://'.$url['host'], FILTER_VALIDATE_URL)) {
                 return false;
             }
@@ -54,20 +54,18 @@ class Domains extends \Framework\Model
             if (!$this->audit->url($url['scheme'].'://'.$url['host'])) {
                 return false;
             }
-
+            
             // fast mode dont do dns check
             if ($fast) {
                 return $url['host'];
             }
-            
+
             putenv('RES_OPTIONS=retrans:1 retry:1 timeout:1 attempts:1');
 
             // strict validation
             if (
                 in_array($url['scheme'], ['http', 'https']) &&
-                ip2long($url['host']) === false &&
-                checkdnsrr($url['host'], $dns) // &&
-                //@get_headers($url)
+                checkdnsrr($url['host'], $dns) === true
             ) {
                 $valid = $url['host'];
             }

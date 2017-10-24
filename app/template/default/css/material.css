@@ -4062,9 +4062,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
-    background-color: #0d48a3;
+    background-color: #007bff;
     color: #FFFFFF;
-    box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
 }
 
 .nav-pills:not(.nav-pills-icons)>li>a {

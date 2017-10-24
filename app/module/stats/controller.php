@@ -12,6 +12,10 @@ class Controller extends \Framework\Controller
         
         // load models
 		$this->domains = new \Model\Domains();
+		
+		
+		//$this->geoinfo = new \Framework\Model('geoinfo');
+		$this->ipinfo = new \Framework\Model('ipinfo');
     }
 
 	/**

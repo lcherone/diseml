@@ -4,7 +4,7 @@
         <div class="card">
             <div class="card-header" data-background-color="blue">
                 <h4 class="title"><i class="fa fa-globe"></i> API</h4>
-                <p class="category">Free and simple API endpoints to the data.</p>
+                <p class="category">Simple API endpoints to the data.</p>
             </div>
             <div class="card-block">
                 <div class="card-content">

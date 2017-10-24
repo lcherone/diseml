@@ -28,12 +28,12 @@
 				    $i=1; foreach ($result as $row):
 				?>
 				<tr>
-					<td><a href="/domain/<?= urlencode($row['domain']) ?>"><?= htmlentities($row['domain']) ?></a></td>
-					<td><?= (!empty($row['ip']) ? '<a href="/ip/'.urlencode($row['ip']).'">'.htmlentities($row['ip']).'</a>' : null) ?></td>
-					<td><?= (!empty($row['ipinfo']['isp']) ? '<a href="/isp/'.urlencode($row['ipinfo']['isp']).'">'.htmlentities(ucwords($row['ipinfo']['isp'])).'</a>' : null) ?></td>
+					<td><a href="/domain/<?= urlencode($row['domain']) ?>" class="ajax-link"><?= htmlentities($row['domain']) ?></a></td>
+					<td><?= (!empty($row['ip']) ? '<a href="/ip/'.urlencode($row['ip']).'" class="ajax-link">'.htmlentities($row['ip']).'</a>' : null) ?></td>
+					<td><?= (!empty($row['ipinfo']['isp']) ? '<a href="/isp/'.urlencode($row['ipinfo']['isp']).'" class="ajax-link">'.htmlentities(ucwords($row['ipinfo']['isp'])).'</a>' : null) ?></td>
 					<td>
 						<?= (!empty($row['geoinfo']['country_code']) ? '<i class="flag-icon flag-icon-'.htmlentities(strtolower($row['geoinfo']['country_code'])).'"></i> ' : null) ?>
-						<?= (!empty($row['geoinfo']['country_name']) ? '<a href="/country/'.urlencode($row['geoinfo']['country_name']).'">'.htmlentities($row['geoinfo']['country_name']).'</a>' : null) ?>
+						<?= (!empty($row['geoinfo']['country_name']) ? '<a href="/country/'.urlencode($row['geoinfo']['country_name']).'" class="ajax-link">'.htmlentities($row['geoinfo']['country_name']).'</a>' : null) ?>
 					</td>
 					<td>
 					    <?= (!empty($row['dns']['A']) ? '<span class="badge badge-info">A</span> ' : '') ?>

@@ -9,7 +9,7 @@
         <title><?= $meta['name'] ?><?= (!empty($page['title']) ? ' - '.$page['title'] : '') ?></title>
     </head>
     <body>
-        <div class="container-fluid ajax-container">
+        <div class="ajax-container">
             <?= $f3->decode($page['body']) ?>
             <?= $f3->decode($css) ?>
             <?= $f3->decode($javascript) ?>

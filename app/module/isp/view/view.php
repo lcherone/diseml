@@ -24,11 +24,11 @@
 			<tbody>
 				<?php foreach ($result['domains'] as $row): ?>
 				<tr>
-					<td><a href="/domain/<?= urlencode($row['domain']) ?>"><?= htmlentities($row['domain']) ?></a></td>
-					<td><?= (!empty($row['ip']) ? '<a href="/ip/'.urlencode($row['ip']).'">'.htmlentities($row['ip']).'</a>' : null) ?></td>
+					<td><a href="/domain/<?= urlencode($row['domain']) ?>" class="ajax-link"><?= htmlentities($row['domain']) ?></a></td>
+					<td><?= (!empty($row['ip']) ? '<a href="/ip/'.urlencode($row['ip']).'" class="ajax-link">'.htmlentities($row['ip']).'</a>' : null) ?></td>
 					<td>
 						<?= (!empty($result['ipinfo'][$row['ipinfo_id']]['country_code']) ? '<i class="flag-icon flag-icon-'.htmlentities(strtolower($result['ipinfo'][$row['ipinfo_id']]['country_code'])).'"></i> ' : null) ?>
-						<?= (!empty($result['ipinfo'][$row['ipinfo_id']]['country']) ? '<a href="/country/'.urlencode($result['ipinfo'][$row['ipinfo_id']]['country']).'">'.htmlentities($result['ipinfo'][$row['ipinfo_id']]['country']).'</a>' : null) ?>
+						<?= (!empty($result['ipinfo'][$row['ipinfo_id']]['country']) ? '<a href="/country/'.urlencode($result['ipinfo'][$row['ipinfo_id']]['country']).'" class="ajax-link">'.htmlentities($result['ipinfo'][$row['ipinfo_id']]['country']).'</a>' : null) ?>
 					</td>
 					<td>
 					    <?= (!empty($row['dns']['A']) ? '<span class="badge badge-info">A</span> ' : '') ?>

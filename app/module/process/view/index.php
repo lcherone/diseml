@@ -1,66 +1,5 @@
 <?php ob_start() ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css" integrity="sha256-EQjZwW4ljrt9dsonbyX+si6kbxgkVde47Ty9FQehnUg=" crossorigin="anonymous" />
-<style>
-	.table td.text {
-		max-width: 177px;
-	}
-	.table td.text span:not(.flag-icon) {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		display: inline-block;
-		max-width: 100%;
-		margin-bottom: -8px;
-	}
-	.signal-bars {
-		display: inline-block;
-	}
-	.signal-bars .bar {
-		width: 10%;
-		margin-left: 1%;
-		min-height: 20%;
-		display: inline-block;
-	}
-	.signal-bars .bar.first-bar {
-		height: 20%;
-	}
-	.signal-bars .bar.second-bar {
-		height: 40%;
-	}
-	.signal-bars .bar.third-bar {
-		height: 60%;
-	}
-	.signal-bars .bar.fourth-bar {
-		height: 80%;
-	}
-	.signal-bars .bar.fifth-bar {
-		height: 99%;
-	}
-	.good .bar {
-		background-color: #16a085;
-		border: thin solid #12816b;
-	}
-	.bad .bar {
-		background-color: #e74c3c;
-		border: thin solid #a82315;
-	}
-	.ok .bar {
-		background-color: #f1c40f;
-		border: thin solid #d0a90c;
-	}
-	.four-bars .bar.fifth-bar,
-	.three-bars .bar.fifth-bar,
-	.three-bars .bar.fourth-bar,
-	.one-bar .bar:not(.first-bar),
-	.two-bars .bar:not(.first-bar):not(.second-bar) {
-		background-color: #fafafa;
-		border: thin solid #f3f3f3;
-	}
-	.sizing-box {
-		height: 40px;
-		width: 85px
-	}
-</style>
 <?php $f3->set('css', $f3->get('css').ob_get_clean()) ?>
 
 <div class="card card-nav-tabs" id="port-forwards">
@@ -81,12 +20,12 @@
 	</div>
 	<div class="card-content">
 		<div id="processing-table"<?= (!empty($form['domains']) ? ' data-process="1"' : null) ?>>
-			<?php if (!empty($form['errors']['global'])): ?>
+			<?php if (!empty($_SESSION['errors']['global'])): ?>
 			<div class="alert alert-info">
 				<a href="#" class="close" data-dismiss="alert">&times;</a>
-				<?= $this->raw($form['errors']['global']) ?>
+				<?= $this->raw($_SESSION['errors']['global']) ?>
 			</div>
-			<?php endif ?>
+			<?php unset($_SESSION['errors']); endif ?>
 			
 			<h5>Progress</h5>
 			<div class="progress">
@@ -154,23 +93,6 @@
 			up: 0,
 			down: 0,
 			requests: 0
-		};
-
-		//
-		$.xhrPool = [];
-		$.xhrPool.abortAll = function() {
-			$(this).each(function(i, jqXHR) {
-				jqXHR.abort();
-				$.xhrPool.splice(i, 1);
-			});
-		};
-		var oldbeforeunload = window.onbeforeunload;
-		window.onbeforeunload = function() {
-			var r = oldbeforeunload ? oldbeforeunload() : undefined;
-			if (r == undefined) {
-				$.xhrPool.abortAll();
-			}
-			return r;
 		};
 
         //

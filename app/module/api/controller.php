@@ -99,6 +99,7 @@ class Controller extends \Framework\Controller
                 } 
                 // without dns
                 else {
+                    
                     $valid = $this->domains->validate($domain);
                 }
                 

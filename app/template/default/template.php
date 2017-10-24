@@ -28,35 +28,36 @@
 				<nav>
 					<ul class="nav nav-pills float-right">
 						<li class="nav-item">
-							<a class="nav-link<?= ($PATH == '/' ? ' active' : null) ?>" href="/">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link<?= ($PATH == '/' ? ' active' : null) ?> ajax-link" href="/">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link<?= ($PATH == '/submit' ? ' active' : null) ?>" href="/submit">Submit</a>
+							<a class="nav-link<?= ($PATH == '/submit' ? ' active' : null) ?> ajax-link" href="/submit">Submit</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link<?= ($PATH == '/api' ? ' active' : null) ?>" href="/api">API</a>
+							<a class="nav-link<?= ($PATH == '/api' ? ' active' : null) ?> ajax-link" href="/api">API</a>
 						</li>					
 						<li class="nav-item">
-							<a class="nav-link<?= ($PATH == '/stats' ? ' active' : null) ?>" href="/stats">Stats</a>
+							<a class="nav-link<?= ($PATH == '/stats' ? ' active' : null) ?> ajax-link" href="/stats">Stats</a>
 						</li>
 					</ul>
 				</nav>
 				<h3 class="text-muted"><img src="/img/logo.png"> Disposable Email Lists</h3>
 			</div>
 
-			<?= $f3->decode($page['body']) ?>
-            <br>
+            <div class="ajax-container">
+			    <?= $f3->decode($page['body']) ?>
+			</div>
+
 			<footer class="footer">
 				<p>An <a href="https://github.com/lcherone/diseml" target="_blank">Open Source Project</a> By Lawrence Cherone.</p>
 			</footer>
-
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-        
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 		<script src="/js/material.js"></script>
+		<script src="/js/app.js"></script>
 		<?= $f3->decode($javascript) ?>
 	</body>
 </html>

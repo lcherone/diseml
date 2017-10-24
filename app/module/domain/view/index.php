@@ -23,7 +23,7 @@
 		?>
 		<tr>
 			<td><?= $row['rank'] ?></td>
-			<td><a href="/domain/<?= urlencode($row['domain']) ?>"><?= htmlentities($row['domain']) ?></a></td>
+			<td><a href="/domain/<?= urlencode($row['domain']) ?>" class="ajax-link"><?= htmlentities($row['domain']) ?></a></td>
 			<td><?= (!empty($row['ip']) ? '<a href="/ip/'.urlencode($row['ip']).'">'.htmlentities($row['ip']).'</a>' : null) ?></td>
 			<td><?= (!empty($row['isp']) ? '<a href="/isp/'.urlencode($row['isp']).'">'.htmlentities($row['isp']).'</a>' : null) ?></td>
 			<td><?= (!empty($row['country_code']) ? '<i class="flag-icon flag-icon-'.htmlentities(strtolower($row['country_code'])).'"></i> ' : null) ?><?= (!empty($row['country_name']) ? '<a href="/country/'.urlencode($row['country_name']).'">'.htmlentities($row['country_name']).'</a>' : null) ?></td>

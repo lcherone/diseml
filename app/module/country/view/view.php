@@ -25,11 +25,11 @@
 			<tbody>
 				<?php foreach ($result['domains'] as $row): ?>
 				<tr>
-					<td><a href="/domain/<?= urlencode($row['domain']) ?>"><?= htmlentities($row['domain']) ?></a></td>
-					<td><?= (!empty($row['ip']) ? '<a href="/ip/'.urlencode($row['ip']).'">'.htmlentities($row['ip']).'</a>' : null) ?></td>
-					<td><?= (!empty($row->ipinfo->isp) ? '<a href="/isp/'.urlencode($row->ipinfo->isp).'">'.htmlentities($row->ipinfo->isp).'</a>' : null) ?></td>
+					<td><a href="/domain/<?= urlencode($row['domain']) ?>" class="ajax-link"><?= htmlentities($row['domain']) ?></a></td>
+					<td><?= (!empty($row['ip']) ? '<a href="/ip/'.urlencode($row['ip']).'" class="ajax-link">'.htmlentities($row['ip']).'</a>' : null) ?></td>
+					<td><?= (!empty($row->ipinfo->isp) ? '<a href="/isp/'.urlencode($row->ipinfo->isp).'" class="ajax-link">'.htmlentities($row->ipinfo->isp).'</a>' : null) ?></td>
 					<td>
-						<?= (!empty($row->geoinfo->region_name) ? '<a href="/region/'.urlencode($row->geoinfo->region_name).'">'.htmlentities($row->geoinfo->region_name).'</a>' : '-') ?>
+						<?= (!empty($row->geoinfo->region_name) ? '<a href="/region/'.urlencode($row->geoinfo->region_name).'" class="ajax-link">'.htmlentities($row->geoinfo->region_name).'</a>' : '-') ?>
 					</td>
 					<td>
 					    <?= (!empty($row['dns']['A']) ? '<span class="badge badge-info">A</span> ' : '') ?>

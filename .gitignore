@@ -1,0 +1,7 @@
+.c9/
+tmp/
+data/
+vendor/
+composer.lock
+adminer.php
+app/config.ini

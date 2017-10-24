@@ -1,0 +1,12 @@
+{
+    "require": {
+        "bcosca/fatfree-core": "^3.6",
+        "brandonwamboldt/utilphp": "1.1.*",
+        "gabordemooij/redbean": ">=4.2",
+        "hashids/hashids": "^1.0",
+        "phpwhois/phpwhois": "^4.2",
+        "knplabs/knp-snappy": "^0.4.3",
+        "h4cc/wkhtmltopdf-amd64": "0.12.x",
+        "h4cc/wkhtmltoimage-amd64": "0.12.x"
+    }
+}

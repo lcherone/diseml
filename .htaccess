@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # main application rewrite
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule .* public/index.php [QSA,L]
+</IfModule>
+
